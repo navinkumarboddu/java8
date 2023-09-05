@@ -27,6 +27,9 @@ public class FP01Exercise {
 		courses.stream()
 			.filter(c -> c.length() > 4)
 			.forEach(System.out::println);
+		
+		//#Exercise 5
+		printCubesOfOddNumbers(numbers);
 	}
 
 	private static void printAllOddNumbers(List<Integer> numbers) {
@@ -34,6 +37,14 @@ public class FP01Exercise {
 		System.out.println("Odd Numbers");
 		numbers.stream()
 			.filter( n -> n%2 != 0)
+			.forEach(System.out::println);
+	}
+	
+	private static void printCubesOfOddNumbers(List<Integer> numbers) {
+		System.out.println("Print Cube of Odd Numbers");
+		numbers.stream()
+			.filter(n -> n%2 != 0)
+			.map(n -> n*n*n)
 			.forEach(System.out::println);
 	}
 }
