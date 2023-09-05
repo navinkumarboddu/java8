@@ -22,8 +22,8 @@ public class FP01Exercise {
 			.filter(c -> c.toLowerCase().contains("Spring".toLowerCase()))
 			.forEach(System.out::println);
 		
-		//print courses length > 4
-		System.out.println("print courses length > 4");
+		//print courses length >= 4
+		System.out.println("print courses length >= 4");
 		courses.stream()
 			.filter(c -> c.length() > 4)
 			.forEach(System.out::println);
