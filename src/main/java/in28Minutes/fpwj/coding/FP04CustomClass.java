@@ -136,7 +136,25 @@ public class FP04CustomClass {
 			.collect(Collectors.toList());
 		*/
 		
+		//max , min, findFirst and findAny
 		
+		System.out.println(courses.stream()
+				.max(comparingByNoOfStudentsAndNoOfReviewsDecreasing));
+		//Optional[FullStack:14000:91]
+		
+		System.out.println(courses.stream()
+				.min(comparingByNoOfStudentsAndNoOfReviewsDecreasing));
+		//Optional[Microservices:25000:96]
+		
+		System.out.println(
+		courses.stream()
+		 		.filter(reviewScoreGreaterThan95Predicate)
+		 		.findFirst());
+		
+		System.out.println(
+				courses.stream()
+				 		.filter(reviewScoreGreaterThan95Predicate)
+				 		.findAny());
 	}
 
 }
