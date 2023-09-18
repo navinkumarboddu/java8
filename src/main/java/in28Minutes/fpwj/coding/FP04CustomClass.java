@@ -46,8 +46,7 @@ class Course {
 
 	@Override
 	public String toString() {
-		return "Course [name=" + name + ", category=" + category + ", reviewScore=" + reviewScore + ", noOfStudents="
-				+ noOfStudents + "]";
+		return name + ":" + noOfStudents + ":" + reviewScore;
 	}
 
 	public Course(String name, String category, int reviewScore, int noOfStudents) {
@@ -93,17 +92,51 @@ public class FP04CustomClass {
 		Comparator<Course> comparingByNoOfStudentsDecreasing = Comparator.comparingInt(Course::getNoOfStudents).reversed();
 
 		System.out.println(courses.stream().sorted(comparingByNoOfStudentsIncreasing).collect(Collectors.toList()));
-		//[Course [name=FullStack, category=FullStack, reviewScore=91, noOfStudents=14000], Course [name=Spring Boot, category=Framework, reviewScore=95, noOfStudents=18000], Course [name=Spring, category=Framework, reviewScore=98, noOfStudents=20000], Course [name=Docker, category=Cloud, reviewScore=92, noOfStudents=20000], Course [name=Kubernetes, category=Cloud, reviewScore=91, noOfStudents=20000], Course [name=AWS, category=Cloud, reviewScore=92, noOfStudents=21000], Course [name=Azure, category=Cloud, reviewScore=99, noOfStudents=21000], Course [name=API, category=Microservices, reviewScore=97, noOfStudents=22000], Course [name=Microservices, category=Microservices, reviewScore=96, noOfStudents=25000]]
+		//[FullStack:14000:91, Spring Boot:18000:95, Spring:20000:98, Docker:20000:92, Kubernetes:20000:91, AWS:21000:92, Azure:21000:99, API:22000:97, Microservices:25000:96]
 		
 		System.out.println(courses.stream().sorted(comparingByNoOfStudentsDecreasing).collect(Collectors.toList()));
-		//[Course [name=Microservices, category=Microservices, reviewScore=96, noOfStudents=25000], Course [name=API, category=Microservices, reviewScore=97, noOfStudents=22000], Course [name=AWS, category=Cloud, reviewScore=92, noOfStudents=21000], Course [name=Azure, category=Cloud, reviewScore=99, noOfStudents=21000], Course [name=Spring, category=Framework, reviewScore=98, noOfStudents=20000], Course [name=Docker, category=Cloud, reviewScore=92, noOfStudents=20000], Course [name=Kubernetes, category=Cloud, reviewScore=91, noOfStudents=20000], Course [name=Spring Boot, category=Framework, reviewScore=95, noOfStudents=18000], Course [name=FullStack, category=FullStack, reviewScore=91, noOfStudents=14000]]
+		//[Microservices:25000:96, API:22000:97, AWS:21000:92, Azure:21000:99, Spring:20000:98, Docker:20000:92, Kubernetes:20000:91, Spring Boot:18000:95, FullStack:14000:91]
 		
 		Comparator<Course> comparingByNoOfStudentsAndNoOfReviewsDecreasing = Comparator.comparing(Course::getNoOfStudents).thenComparingInt(Course::getReviewScore).reversed();
 
 		System.out.println(courses.stream().sorted(comparingByNoOfStudentsAndNoOfReviewsDecreasing).collect(Collectors.toList()));
-		//[Course [name=Microservices, category=Microservices, reviewScore=96, noOfStudents=25000], Course [name=API, category=Microservices, reviewScore=97, noOfStudents=22000], Course [name=Azure, category=Cloud, reviewScore=99, noOfStudents=21000], Course [name=AWS, category=Cloud, reviewScore=92, noOfStudents=21000], Course [name=Spring, category=Framework, reviewScore=98, noOfStudents=20000], Course [name=Docker, category=Cloud, reviewScore=92, noOfStudents=20000], Course [name=Kubernetes, category=Cloud, reviewScore=91, noOfStudents=20000], Course [name=Spring Boot, category=Framework, reviewScore=95, noOfStudents=18000], Course [name=FullStack, category=FullStack, reviewScore=91, noOfStudents=14000]]
+		//[Microservices:25000:96, API:22000:97, Azure:21000:99, AWS:21000:92, Spring:20000:98, Docker:20000:92, Kubernetes:20000:91, Spring Boot:18000:95, FullStack:14000:91]
 
-		/***Sorting and Comparing***/
+		/***skip, limit, takeWhile and dropWhile***/
+		System.out.println(courses.stream()
+				.sorted(comparingByNoOfStudentsAndNoOfReviewsDecreasing)
+				.skip(3)
+				.collect(Collectors.toList()));
+		//[AWS:21000:92, Spring:20000:98, Docker:20000:92, Kubernetes:20000:91, Spring Boot:18000:95, FullStack:14000:91]
+		
+		System.out.println(courses.stream()
+				.sorted(comparingByNoOfStudentsAndNoOfReviewsDecreasing)
+				.limit(5)
+				.collect(Collectors.toList()));
+		//[Microservices:25000:96, API:22000:97, Azure:21000:99, AWS:21000:92, Spring:20000:98]
+		
+		System.out.println(courses.stream()
+				.sorted(comparingByNoOfStudentsAndNoOfReviewsDecreasing)
+				.skip(3)
+				.limit(5)
+				.collect(Collectors.toList()));
+		//[AWS:21000:92, Spring:20000:98, Docker:20000:92, Kubernetes:20000:91, Spring Boot:18000:95]
+		
+		System.out.println(courses);
+		//[Spring:20000:98, Spring Boot:18000:95, API:22000:97, Microservices:25000:96, FullStack:14000:91, AWS:21000:92, Azure:21000:99, Docker:20000:92, Kubernetes:20000:91]
+		
+		/*
+		 * takeWhile and dropWhile work with Java 9 onwards
+		 courses.stream()
+		 	.takeWhile(course -> course.getReviewScore()>=95)
+			.collect(Collectors.toList());
+		
+		courses.stream() 
+			.dropWhile(course -> course.getReviewScore()>=95)
+			.collect(Collectors.toList());
+		*/
+		
+		
 	}
 
 }
