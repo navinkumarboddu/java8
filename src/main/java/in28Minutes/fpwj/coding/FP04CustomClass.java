@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 class Course {
@@ -155,6 +156,61 @@ public class FP04CustomClass {
 				courses.stream()
 				 		.filter(reviewScoreGreaterThan95Predicate)
 				 		.findAny());
+		
+		//sum, average and count
+		System.out.println(
+				courses.stream()
+				 		.filter(reviewScoreGreaterThan95Predicate)
+				 		.mapToInt(Course::getNoOfStudents)
+				 		.sum());
+		//88000
+		
+		System.out.println(
+				courses.stream()
+				 		.filter(reviewScoreGreaterThan95Predicate)
+				 		.mapToInt(Course::getNoOfStudents)
+				 		.average());
+		//220000
+		
+		System.out.println(
+				courses.stream()
+				 		.filter(reviewScoreGreaterThan95Predicate)
+				 		.mapToInt(Course::getNoOfStudents)
+				 		.count());
+		//4
+		
+		System.out.println(
+				courses.stream()
+				 		.filter(reviewScoreGreaterThan95Predicate)
+				 		.mapToInt(Course::getNoOfStudents)
+				 		.max());
+		//25000
+		
+		
+		//GRoupIng based on category
+		System.out.println(
+				courses.stream()
+					.collect(Collectors.groupingBy(Course::getCategory)));
+		//{Cloud=[AWS:21000:92, Azure:21000:99, Docker:20000:92, Kubernetes:20000:91], 
+		//FullStack=[FullStack:14000:91], 
+		//Microservices=[API:22000:97, Microservices:25000:96], 
+		//Framework=[Spring:20000:98, Spring Boot:18000:95]}
+
+		System.out.println(
+				courses.stream()
+					.collect(Collectors.groupingBy(Course::getCategory, Collectors.counting())));
+		//{Cloud=4, FullStack=1, Microservices=2, Framework=2}
+		
+		System.out.println(
+				courses.stream()
+					.collect(Collectors.groupingBy(Course::getCategory, Collectors.maxBy(Comparator.comparing(Course::getReviewScore)))));
+		//{Cloud=Optional[Azure:21000:99], FullStack=Optional[FullStack:14000:91], Microservices=Optional[API:22000:97], Framework=Optional[Spring:20000:98]}
+		
+		System.out.println(
+				courses.stream()
+					.collect(Collectors.groupingBy(Course::getCategory, 
+							Collectors.mapping(Course::getName, Collectors.toList()))));
+		//{Cloud=[AWS, Azure, Docker, Kubernetes], FullStack=[FullStack], Microservices=[API, Microservices], Framework=[Spring, Spring Boot]}
 	}
 
 }
