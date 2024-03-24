@@ -45,5 +45,16 @@ public class LoopingExamples {
         for(String f: fruits){
             System.out.println(f);
         }
+
+        boolean event = false;
+        OUTER: for (int i = 0; i < 5; i++) {
+            INNER: for (int j = 0; j < 3; j++) {
+                if(i==3) {
+                    event = true;
+                    break;
+                }
+            }
+        }
+        System.out.println(event);
     }
 }
