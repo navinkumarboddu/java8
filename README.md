@@ -11,6 +11,7 @@ This repo will contain code samples, practice for various online courses
 | arrays.coding           | Pluralsight - https://app.pluralsight.com/ilx/video-courses/e30b0d60-0e2c-42b5-87f5-c61c95d1a743                                                                                                                                                               |
 | methods.coding          | Pluralsight - https://app.pluralsight.com/library/courses/java-se-8-programmer-working-methods-encapsulation-1z0-808-cert                                                                                                                                      |
 | inheritance.coding | Pluralsight - https://app.pluralsight.com/library/courses/working-inheritance-java-se-8-programmer-certification-1z0-808 |
+| exception.coding | Pluralsight - https://app.pluralsight.com/library/courses/handling-exceptions-java-se-8-programmer-certification-1z0-808/table-of-contents |
 
 
 
