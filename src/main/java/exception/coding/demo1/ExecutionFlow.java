@@ -1,4 +1,4 @@
-package exception.coding;
+package exception.coding.demo1;
 
 public class ExecutionFlow {
     public static void main(String[] args) {
