@@ -33,6 +33,7 @@ public class StreamMapExample {
     public static void main(String[] args) {
 
         System.out.println(namesList());
+
         System.out.println(namesSet());
     }
 }
