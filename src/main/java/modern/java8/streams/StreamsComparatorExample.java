@@ -23,6 +23,13 @@ public class StreamsComparatorExample {
                 .collect(Collectors.toList());
     }
 
+    public static List<Student> sortStudentsByGpaDesc(){
+        return StudentDataBase.getAllStudents()
+                .stream()
+                .sorted(Comparator.comparing(Student::getGpa).reversed())
+                .collect(Collectors.toList());
+    }
+
     public static void main(String[] args) {
         //sortByName
         System.out.println("Students sorted by Name:");
@@ -31,5 +38,9 @@ public class StreamsComparatorExample {
         //sortByGpa
         System.out.println("Students sorted by Gpa:");
         sortStudentsByGpa().forEach(System.out::println);
+
+        //sortByGpaDesc
+        System.out.println("Students sorted by Gpa DESC:");
+        sortStudentsByGpaDesc().forEach(System.out::println);
     }
 }
