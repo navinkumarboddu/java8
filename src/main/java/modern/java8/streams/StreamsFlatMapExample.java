@@ -25,5 +25,8 @@ public class StreamsFlatMapExample {
 
         System.out.println(printStudentActivities().stream().distinct().count());
 
+        printStudentActivities().stream().sorted().forEach(System.out::println);
+
+        printStudentActivities().stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
     }
 }
