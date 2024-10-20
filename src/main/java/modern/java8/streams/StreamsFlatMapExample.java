@@ -18,5 +18,6 @@ public class StreamsFlatMapExample {
     }
 
     public static void main(String[] args) {
+        System.out.println("printStudentActivites :: " + printStudentActivities());
     }
 }
