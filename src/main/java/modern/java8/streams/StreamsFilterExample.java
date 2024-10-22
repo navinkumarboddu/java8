@@ -12,6 +12,7 @@ public class StreamsFilterExample {
         return StudentDataBase.getAllStudents()
                 .stream()
                 .filter(student -> student.getGender().equals("female"))
+                //filter chaining can be done
                 .collect(Collectors.toList());
     }
 
