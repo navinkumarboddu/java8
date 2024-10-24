@@ -12,9 +12,18 @@ public class StreamsMinMaxExample {
                 .reduce(Integer::max);
     }
 
+    public static Optional<Integer> findMinValue(List<Integer> integerList){
+        return integerList.stream()
+                .reduce( (a,b) -> a < b ? a : b);
+                //.reduce(Integer::max);
+    }
+
     public static void main(String[] args) {
         List<Integer> integerList = Arrays.asList(6,7,8,9,10);
         System.out.println("Max value:" + findMaxValue(integerList));
         System.out.println("Max value:" + findMaxValue(integerList).get());
+
+        System.out.println("Min value:" + findMinValue(integerList));
+        System.out.println("Min value:" + findMinValue(integerList).get());
     }
 }
