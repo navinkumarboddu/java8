@@ -13,12 +13,20 @@ public class StreamsMatchExample {
     public static boolean anyMatch(){
         return StudentDataBase.getAllStudents()
                 .stream()
-                .anyMatch(student -> student.getGpa() >= 4.2);
+                .anyMatch(student -> student.getGpa() >= 4.1);
+    }
+
+    public static boolean noneMatch(){
+        return StudentDataBase.getAllStudents()
+                .stream()
+                .noneMatch(student -> student.getGpa() >= 4.3);
     }
 
     public static void main(String[] args) {
         System.out.println("Result of allMatch(): " + allMatch());
 
         System.out.println("Result of anyMatch(): " + anyMatch());
+
+        System.out.println("Result of noneMatch(): " + noneMatch());
     }
 }
