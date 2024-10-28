@@ -15,9 +15,17 @@ public class NumericStreamsBoxingUnBoxingExample {
                 .collect(Collectors.toList());
     }
 
-
+    //wrapper to primitive
+    public static int unBoxing(List<Integer> integerList){
+       return integerList.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
 
     public static void main(String[] args) {
         System.out.println("Boxing : " + boxing());
+
+        List<Integer> integerList = boxing();
+        System.out.println("UnBoxing : " + unBoxing(integerList));
     }
 }
