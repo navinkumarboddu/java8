@@ -19,8 +19,15 @@ public class NumericStreamsMapToExample {
                 .sum();
     }
 
+    public static Double mapToDouble(){
+        return IntStream.rangeClosed(1,5)
+                .mapToDouble((i) -> i)
+                .sum();
+    }
+
     public static void main(String[] args) {
         System.out.println("mapToObj : " + mapToObj());
         System.out.println("mapToLong : " + mapToLong());
+        System.out.println("mapToDouble : " + mapToDouble());
     }
 }
