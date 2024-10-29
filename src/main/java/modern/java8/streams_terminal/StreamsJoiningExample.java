@@ -31,5 +31,6 @@ public class StreamsJoiningExample {
     public static void main(String[] args) {
         System.out.println("joining_1 : " + joining_1());
         System.out.println("joining_2 : " + joining_2());
+        System.out.println("joining_3 : " + joining_3());
     }
 }
