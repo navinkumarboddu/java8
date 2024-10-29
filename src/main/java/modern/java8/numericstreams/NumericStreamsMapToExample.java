@@ -13,7 +13,14 @@ public class NumericStreamsMapToExample {
                 }).collect(Collectors.toList()) ;
     }
 
+    public static long mapToLong(){
+        return IntStream.rangeClosed(1,5)
+                .mapToLong((i) -> i)
+                .sum();
+    }
+
     public static void main(String[] args) {
         System.out.println("mapToObj : " + mapToObj());
+        System.out.println("mapToLong : " + mapToLong());
     }
 }
