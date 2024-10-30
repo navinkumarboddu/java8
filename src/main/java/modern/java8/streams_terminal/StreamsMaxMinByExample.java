@@ -16,5 +16,6 @@ public class StreamsMaxMinByExample {
     }
 
     public static void main(String[] args) {
+        System.out.println(minBy_Example());
     }
 }
