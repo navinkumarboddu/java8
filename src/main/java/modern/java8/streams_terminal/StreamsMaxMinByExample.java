@@ -15,6 +15,12 @@ public class StreamsMaxMinByExample {
                 .collect(Collectors.minBy(Comparator.comparing(Student::getGpa)));
     }
 
+    public static Optional<Student> maxBy_Example(){
+        return StudentDataBase.getAllStudents()
+                .stream()
+                .collect(Collectors.maxBy(Comparator.comparing(Student::getGpa)));
+    }
+
     public static void main(String[] args) {
         System.out.println(minBy_Example());
     }
