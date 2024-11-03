@@ -3,9 +3,7 @@ package modern.java8.streams_terminal;
 import modern.java8.data.Student;
 import modern.java8.data.StudentDataBase;
 
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamsGroupingByExample {
@@ -42,10 +40,21 @@ public class StreamsGroupingByExample {
         System.out.println(studentMap);
     }
 
+    public static void threeArgumentGroupingBy(){
+        LinkedHashMap<String, Set<Student>> studentLinkedHashMap =
+        StudentDataBase.getAllStudents()
+                .stream()
+                .collect(Collectors.groupingBy(Student::getName, LinkedHashMap::new, Collectors.toSet()));
+
+        System.out.println(studentLinkedHashMap);
+    }
+
     public static void main(String[] args) {
         //groupStudentsByGender();
         //customizedGroupBy();
         //twoLevelGrouping_1();
-        twoLevelGrouping_2();
+        //twoLevelGrouping_2();
+
+        threeArgumentGroupingBy();
     }
 }
