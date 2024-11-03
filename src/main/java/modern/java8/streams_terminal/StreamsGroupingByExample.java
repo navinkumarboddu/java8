@@ -67,7 +67,23 @@ public class StreamsGroupingByExample {
 
     }
 
+    public static void calculateLeastGpa(){
+        Map<Integer,Optional<Student>> studentMapOptional =
+                StudentDataBase.getAllStudents()
+                        .stream()
+                        .collect(Collectors.groupingBy(Student::getGradeLevel,
+                                Collectors.minBy(Comparator.comparing(Student::getGpa))));
+        System.out.println(studentMapOptional);
 
+        Map<Integer,Student> studentMapOptional1 =
+                StudentDataBase.getAllStudents()
+                        .stream()
+                        .collect(Collectors.groupingBy(Student::getGradeLevel,
+                                Collectors.collectingAndThen(Collectors.minBy(Comparator.comparing(Student::getGpa)), Optional::get)));
+
+        System.out.println(studentMapOptional1);
+
+    }
 
     public static void main(String[] args) {
         //groupStudentsByGender();
@@ -76,6 +92,7 @@ public class StreamsGroupingByExample {
         //twoLevelGrouping_2();
 
         //threeArgumentGroupingBy();
-        calculateTopGpa();
+        //calculateTopGpa();
+        calculateLeastGpa();
     }
 }
