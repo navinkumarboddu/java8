@@ -57,6 +57,14 @@ public class StreamsGroupingByExample {
                                 Collectors.maxBy(Comparator.comparing(Student::getGpa))));
         System.out.println(studentMapOptional);
 
+        Map<Integer,Student> studentMapOptional1 =
+                StudentDataBase.getAllStudents()
+                        .stream()
+                        .collect(Collectors.groupingBy(Student::getGradeLevel,
+                               Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparing(Student::getGpa)), Optional::get)));
+
+        System.out.println(studentMapOptional1);
+
     }
 
 
