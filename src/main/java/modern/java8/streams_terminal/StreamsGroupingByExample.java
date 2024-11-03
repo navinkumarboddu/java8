@@ -49,12 +49,25 @@ public class StreamsGroupingByExample {
         System.out.println(studentLinkedHashMap);
     }
 
+    public static void calculateTopGpa(){
+       Map<Integer,Optional<Student>> studentMapOptional =
+        StudentDataBase.getAllStudents()
+                        .stream()
+                        .collect(Collectors.groupingBy(Student::getGradeLevel,
+                                Collectors.maxBy(Comparator.comparing(Student::getGpa))));
+        System.out.println(studentMapOptional);
+
+    }
+
+
+
     public static void main(String[] args) {
         //groupStudentsByGender();
         //customizedGroupBy();
         //twoLevelGrouping_1();
         //twoLevelGrouping_2();
 
-        threeArgumentGroupingBy();
+        //threeArgumentGroupingBy();
+        calculateTopGpa();
     }
 }
