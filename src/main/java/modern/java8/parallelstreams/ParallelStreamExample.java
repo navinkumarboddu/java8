@@ -11,6 +11,7 @@ public class ParallelStreamExample {
 
     public static int sum_parallel_Stream(){
         return IntStream.rangeClosed(1,100000)
+                .parallel()
                 .sum();
     }
 
