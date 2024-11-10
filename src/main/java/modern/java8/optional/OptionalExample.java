@@ -29,6 +29,8 @@ public class OptionalExample {
         System.out.println("Length of the student name : " + name.length());
 
         Optional<String> studentOptional = getStudentNameOptional();
-        System.out.println("Length of the student name : " + studentOptional.get().length());
+        if(studentOptional.isPresent()){
+            System.out.println("Length of the student name : " + studentOptional.get().length());
+        }
     }
 }
