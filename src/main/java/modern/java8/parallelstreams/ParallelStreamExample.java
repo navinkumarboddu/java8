@@ -29,5 +29,7 @@ public class ParallelStreamExample {
         System.out.println("Sequential Stream Result :" + checkPerformanceResult(ParallelStreamExample::sumSequentialStream,20));
 
         System.out.println("Parallel Stream Result :" + checkPerformanceResult(ParallelStreamExample::sumParallelStream,20));
+
+        System.out.println(Runtime.getRuntime().availableProcessors());
     }
 }
