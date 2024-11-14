@@ -9,7 +9,12 @@ public class OptionalOfEmptyNullableExample {
         return Optional.ofNullable(null);
     }
 
+    public static Optional<String> of(){
+        return Optional.of("Hello");
+    }
+
     public static void main(String[] args) {
         System.out.println(ofNullable());
+        System.out.println(of().isPresent());
     }
 }
