@@ -14,7 +14,14 @@ public class OptionalOrElseExample {
         return name;
     }
 
+    public static String optionalOrElseToGetDefault(){
+        Optional<Student> studentOptional = Optional.ofNullable(null);
+        String name = studentOptional.map(Student::getName).orElse("Default");
+        return name;
+    }
+
     public static void main(String[] args) {
         System.out.println(optionalOrElse());
+        System.out.println(optionalOrElseToGetDefault());
     }
 }
