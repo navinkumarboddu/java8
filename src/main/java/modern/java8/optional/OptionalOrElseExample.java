@@ -20,8 +20,15 @@ public class OptionalOrElseExample {
         return name;
     }
 
+    public static String optionalOrElseGet(){
+        Optional<Student> studentOptional = Optional.ofNullable(StudentDataBase.studentSupplier.get());
+        String name = studentOptional.map(Student::getName).orElseGet(() -> "Default");
+        return name;
+    }
+
     public static void main(String[] args) {
         System.out.println(optionalOrElse());
         System.out.println(optionalOrElseToGetDefault());
+        System.out.println(optionalOrElseGet());
     }
 }
