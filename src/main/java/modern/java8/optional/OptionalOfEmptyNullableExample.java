@@ -13,8 +13,13 @@ public class OptionalOfEmptyNullableExample {
         return Optional.of("Hello");
     }
 
+    public static Optional<String> empty(){
+        return Optional.empty();
+    }
+
     public static void main(String[] args) {
-        System.out.println(ofNullable());
-        System.out.println(of().isPresent());
+        System.out.println("ofNullable : " + ofNullable());
+        System.out.println("of : " + of().isPresent());
+        System.out.println("empty : " + empty());
     }
 }
