@@ -26,9 +26,16 @@ public class OptionalOrElseExample {
         return name;
     }
 
+    public static String optionalOrElseThrow(){
+        Optional<Student> studentOptional = Optional.ofNullable(null);
+        String name = studentOptional.map(Student::getName).orElseThrow(() -> new RuntimeException("Name not Found"));
+        return name;
+    }
+
     public static void main(String[] args) {
         System.out.println(optionalOrElse());
         System.out.println(optionalOrElseToGetDefault());
         System.out.println(optionalOrElseGet());
+        System.out.println(optionalOrElseThrow());
     }
 }
