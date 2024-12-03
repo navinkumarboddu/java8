@@ -12,7 +12,13 @@ public class OptionalPresentExample {
         }
     }
 
+    public static void ifPresent(){
+        Optional<String> optional = Optional.ofNullable("Hello");
+        optional.ifPresent(s -> System.out.println(s));
+    }
+
     public static void main(String[] args) {
         isPresent();
+        ifPresent();
     }
 }
