@@ -28,5 +28,6 @@ public class OptionalMapFlatMapExample {
 
     public static void main(String[] args) {
         optionalFilter();
+        optionalMap();
     }
 }
