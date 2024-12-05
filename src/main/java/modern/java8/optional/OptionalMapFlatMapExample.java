@@ -26,6 +26,17 @@ public class OptionalMapFlatMapExample {
         }
     }
 
+    //flatMap
+    public static void optionalFlatMap(){
+        Optional<Student> studentOptional = Optional.ofNullable(StudentDataBase.studentSupplier.get());
+        if(studentOptional.isPresent()) {
+            Optional<String> stringOptional = studentOptional
+                    .filter(student -> student.getBike().isPresent())
+
+            System.out.println(stringOptional.get());
+        }
+    }
+
     public static void main(String[] args) {
         optionalFilter();
         optionalMap();
