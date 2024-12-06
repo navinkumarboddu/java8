@@ -1,5 +1,6 @@
 package modern.java8.optional;
 
+import modern.java8.data.Bike;
 import modern.java8.data.Student;
 import modern.java8.data.StudentDataBase;
 
@@ -31,8 +32,9 @@ public class OptionalMapFlatMapExample {
         Optional<Student> studentOptional = Optional.ofNullable(StudentDataBase.studentSupplier.get());
         if(studentOptional.isPresent()) {
             Optional<String> stringOptional = studentOptional
-                    .filter(student -> student.getBike().isPresent())
-
+                    .filter(student -> student.getGpa() >= 3.5)
+                    .flatMap(Student::getBike)
+                    .map(Bike::getName);
             System.out.println(stringOptional.get());
         }
     }
@@ -40,5 +42,6 @@ public class OptionalMapFlatMapExample {
     public static void main(String[] args) {
         optionalFilter();
         optionalMap();
+        optionalFlatMap();
     }
 }
