@@ -19,6 +19,14 @@ public class DefaultMethodsExample2 {
         studentList.forEach(studentConsumer);
     }
 
+    public static void sortByGpa(List<Student> studentList){
+        System.out.println("After sort");
+        Comparator<Student> nameComparator = Comparator.comparingDouble(Student::getGpa);
+        studentList.sort(nameComparator);
+
+        studentList.forEach(studentConsumer);
+    }
+
     public static void main(String[] args) {
         List<Student> studentList = StudentDataBase.getAllStudents();
         //System.out.println(studentList);
@@ -26,6 +34,7 @@ public class DefaultMethodsExample2 {
         System.out.println("Before sort");
         studentList.forEach(studentConsumer);
 
-        sortByName(studentList);
+        //sortByName(studentList);
+        sortByGpa(studentList);
     }
 }
