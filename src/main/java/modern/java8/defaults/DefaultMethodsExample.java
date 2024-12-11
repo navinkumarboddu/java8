@@ -25,5 +25,8 @@ public class DefaultMethodsExample {
          */
         stringList.sort(Comparator.naturalOrder());
         System.out.println("Sort List using List.Sort() : " + stringList);
+
+        stringList.sort(Comparator.reverseOrder());
+        System.out.println("Sort List using List.Sort() : " + stringList);
     }
 }
