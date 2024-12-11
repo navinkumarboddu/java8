@@ -10,6 +10,8 @@ import java.util.function.Consumer;
 public class DefaultMethodsExample2 {
 
     static Consumer<Student> studentConsumer = (student -> System.out.println(student));
+    static Comparator<Student> nameComparator = Comparator.comparing(Student::getName);
+    static Comparator<Student> gradeComparator = Comparator.comparing(Student::getGradeLevel);
 
     public static void sortByName(List<Student> studentList){
         System.out.println("After sort");
@@ -20,10 +22,16 @@ public class DefaultMethodsExample2 {
     }
 
     public static void sortByGpa(List<Student> studentList){
-        System.out.println("After sort");
+        System.out.println("After sortByGPA");
         Comparator<Student> nameComparator = Comparator.comparingDouble(Student::getGpa);
         studentList.sort(nameComparator);
 
+        studentList.forEach(studentConsumer);
+    }
+
+    public static void sortByChaining(List<Student> studentList){
+        System.out.println("After sortChaining");
+        studentList.sort(gradeComparator.thenComparing(nameComparator));
         studentList.forEach(studentConsumer);
     }
 
@@ -35,6 +43,7 @@ public class DefaultMethodsExample2 {
         studentList.forEach(studentConsumer);
 
         //sortByName(studentList);
-        sortByGpa(studentList);
+        //sortByGpa(studentList);
+        sortByChaining(studentList);
     }
 }
