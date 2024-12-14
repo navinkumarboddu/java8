@@ -10,6 +10,8 @@ public class DefaultMethodsExample3 {
 
     public static void sortWithNullValues(List<Student> studentList){
         Comparator<Student> studentComparator = Comparator.nullsFirst(DefaultMethodsExample2.nameComparator);
+        studentList.sort(studentComparator);
+        studentList.forEach(DefaultMethodsExample2.studentConsumer);
     }
 
     public static void main(String[] args) {
@@ -19,5 +21,6 @@ public class DefaultMethodsExample3 {
 
         //sortByName(studentList);
         //sortByGpa(studentList);
+        sortWithNullValues(studentList);
     }
 }
