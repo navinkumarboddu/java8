@@ -20,5 +20,10 @@ public class LocalDateExample {
         System.out.println(localDate.getDayOfWeek());
         System.out.println(localDate.getDayOfYear());
 
+
+        /**
+         * Modifying LocalDate
+         */
+        System.out.println(localDate.plusDays(2));
     }
 }
