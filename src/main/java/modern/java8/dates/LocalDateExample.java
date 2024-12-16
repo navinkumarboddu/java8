@@ -24,7 +24,8 @@ public class LocalDateExample {
         /**
          * Modifying LocalDate
          */
-        System.out.println(localDate.plusDays(2));
-        System.out.println(localDate.plusMonths(2));
+        System.out.println("plusDays : " + localDate.plusDays(2));
+        System.out.println("plusMonths : " + localDate.plusMonths(2));
+        System.out.println("minusDays : " + localDate.minusDays(2));
     }
 }
