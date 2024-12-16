@@ -9,5 +9,7 @@ public class LocalDateExample {
         System.out.println("localDate : " + localDate);
 
         System.out.println("CustomDate : " + LocalDate.of(2018,07,17));
+
+        System.out.println("Day of Year : " + LocalDate.ofYearDay(2018,365));
     }
 }
