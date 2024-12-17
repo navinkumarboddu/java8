@@ -40,5 +40,8 @@ public class LocalDateExample {
          */
         System.out.println("Leap Year Check : " + LocalDate.ofYearDay(2020,01). isLeapYear());
 
+        LocalDate localDate1 = LocalDate.of(2025,01,02);
+        System.out.println("Dates Equality : " + localDate.isEqual(localDate1));
+
     }
 }
