@@ -33,6 +33,12 @@ public class LocalDateExample {
         System.out.println("with ChronoField : " + localDate.with(ChronoField.YEAR, 2020));
         System.out.println("with TemporalAdjusters : " + localDate.with(TemporalAdjusters.firstDayOfNextMonth()));
 
-        System.out.println("minus year : " + localDate.minus(1, ChronoUnit.YEARS));
+        System.out.println("chronounit minus year : " + localDate.minus(1, ChronoUnit.YEARS));
+
+        /**
+         * Additional Support Methods
+         */
+        System.out.println("Leap Year Check : " + LocalDate.ofYearDay(2020,01). isLeapYear());
+
     }
 }
