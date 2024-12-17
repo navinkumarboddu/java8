@@ -42,6 +42,7 @@ public class LocalDateExample {
 
         LocalDate localDate1 = LocalDate.of(2025,01,02);
         System.out.println("Dates Equality : " + localDate.isEqual(localDate1));
-
+        System.out.println("Dates Before : " + localDate.isBefore(localDate1));
+        System.out.println("Dates After : " + localDate1.isAfter(localDate));
     }
 }
