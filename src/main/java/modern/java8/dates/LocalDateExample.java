@@ -1,7 +1,7 @@
 package modern.java8.dates;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoField;
+import java.time.temporal.*;
 
 public class LocalDateExample {
 
@@ -29,7 +29,10 @@ public class LocalDateExample {
         System.out.println("plusMonths : " + localDate.plusMonths(2));
         System.out.println("minusDays : " + localDate.minusDays(2));
 
-        System.out.println(localDate.withYear(2019));
-        System.out.println(localDate.with(ChronoField.YEAR, 2020));
+        System.out.println("with Year : " + localDate.withYear(2019));
+        System.out.println("with ChronoField : " + localDate.with(ChronoField.YEAR, 2020));
+        System.out.println("with TemporalAdjusters : " + localDate.with(TemporalAdjusters.firstDayOfNextMonth()));
+
+        System.out.println("minus year : " + localDate.minus(1, ChronoUnit.YEARS));
     }
 }
