@@ -27,5 +27,7 @@ public class LocalDateExample {
         System.out.println("plusDays : " + localDate.plusDays(2));
         System.out.println("plusMonths : " + localDate.plusMonths(2));
         System.out.println("minusDays : " + localDate.minusDays(2));
+
+        System.out.println(localDate.withYear(2019));
     }
 }
