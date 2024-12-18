@@ -16,5 +16,11 @@ public class LocalTimeExample {
 
         LocalTime localTime3 = LocalTime.of(23,33,33,980980980);
         System.out.println("LocalTime3 : " + localTime3);
+
+        /**
+         * getting the values from local time instance
+         */
+        System.out.println("Current Hour : " + localTime.getHour());
+
     }
 }
