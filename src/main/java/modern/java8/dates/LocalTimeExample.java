@@ -21,6 +21,6 @@ public class LocalTimeExample {
          * getting the values from local time instance
          */
         System.out.println("Current Hour : " + localTime.getHour());
-
+        System.out.println("getMinute : " + localTime.getMinute());
     }
 }
