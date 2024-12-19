@@ -32,5 +32,9 @@ public class LocalTimeExample {
          * Modify the values of LocalTime
          */
         System.out.println("minus 2 hours : " + localTime.minusHours(2));
+        System.out.println("Chronounit minus 2 hours : " + localTime.minus(2,ChronoUnit.HOURS));
+
+        System.out.println("MIDNIGHT : " + localTime.with(LocalTime.MIDNIGHT));
+        System.out.println("MIDNIGHT : " + localTime.with(ChronoField.HOUR_OF_DAY, 22));
     }
 }
