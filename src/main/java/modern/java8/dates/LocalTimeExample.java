@@ -27,5 +27,10 @@ public class LocalTimeExample {
 
         System.out.println("Clock hour : "+  localTime.get(ChronoField.CLOCK_HOUR_OF_DAY));
         System.out.println("Seconds : "+  localTime.toSecondOfDay());
+
+        /**
+         * Modify the values of LocalTime
+         */
+        System.out.println("minus 2 hours : " + localTime.minusHours(2));
     }
 }
