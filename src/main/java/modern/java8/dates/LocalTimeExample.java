@@ -36,5 +36,8 @@ public class LocalTimeExample {
 
         System.out.println("MIDNIGHT : " + localTime.with(LocalTime.MIDNIGHT));
         System.out.println("MIDNIGHT : " + localTime.with(ChronoField.HOUR_OF_DAY, 22));
+
+        System.out.println("plusMinutes : " + localTime.plusMinutes(30));
+        System.out.println("withHour : " + localTime.withHour(10));
     }
 }
