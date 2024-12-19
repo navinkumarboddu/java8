@@ -1,6 +1,8 @@
 package modern.java8.dates;
 
 import java.time.LocalTime;
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 
 public class LocalTimeExample {
 
@@ -22,5 +24,8 @@ public class LocalTimeExample {
          */
         System.out.println("Current Hour : " + localTime.getHour());
         System.out.println("getMinute : " + localTime.getMinute());
+
+        System.out.println("Clock hour : "+  localTime.get(ChronoField.CLOCK_HOUR_OF_DAY));
+        System.out.println("Seconds : "+  localTime.toSecondOfDay());
     }
 }
