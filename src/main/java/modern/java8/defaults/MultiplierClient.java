@@ -9,5 +9,7 @@ public class MultiplierClient {
         Multiplier multiplier = new MultiplierImpl();
         List<Integer> integerList = Arrays.asList(1,3,5);
         System.out.println("Multiplication : " + multiplier.multiply(integerList));
+
+        System.out.println("Size : " + multiplier.size(integerList));
     }
 }
