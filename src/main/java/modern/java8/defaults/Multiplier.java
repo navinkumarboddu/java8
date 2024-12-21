@@ -8,4 +8,8 @@ public interface Multiplier {
     default int size(List<Integer> integerList){
         return integerList.size();
     }
+
+    static boolean isEmpty(List<Integer> integerList){
+        return integerList != null && integerList.size() > 0;
+    }
 }

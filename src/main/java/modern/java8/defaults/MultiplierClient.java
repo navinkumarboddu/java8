@@ -11,5 +11,7 @@ public class MultiplierClient {
         System.out.println("Multiplication : " + multiplier.multiply(integerList));
 
         System.out.println("Size : " + multiplier.size(integerList));
+
+        System.out.println("IsEmpty : " + Multiplier.isEmpty(integerList));
     }
 }
