@@ -9,4 +9,9 @@ public class MultiplierImpl implements Multiplier {
                 .stream()
                 .reduce(1,(x,y) -> x*y);
     }
+
+    public int size(List<Integer> integerList){
+        System.out.println("Inside MultiplierImpl");
+        return integerList.size();
+    }
 }
