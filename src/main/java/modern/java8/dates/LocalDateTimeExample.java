@@ -31,5 +31,18 @@ public class LocalDateTimeExample {
         System.out.println("plus hour : " + localDateTime.plusHours(2));
         System.out.println("minus Days : " + localDateTime.minusDays(2));
         System.out.println("withMonth : " + localDateTime.withMonth(2));
+
+        /**
+         * converting localdate, localtime to localdatetime and viceversa
+         */
+        LocalDate localDate = LocalDate.of(2019,01,01);
+        System.out.println("atTime : " + localDate.atTime(23,33));
+
+        LocalTime localTime = LocalTime.of(23,59);
+        System.out.println("atDate :"  + localTime.atDate(localDate));
+
+        LocalDateTime localDateTime3 = localTime.atDate(localDate);
+        System.out.println("toLocalDate : " + localDateTime3.toLocalDate());
+        System.out.println("toLocalTime : " + localDateTime3.toLocalTime());
     }
 }
