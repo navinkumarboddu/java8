@@ -35,10 +35,10 @@ public class PredicateExample {
 		System.out.println("Predicate And -------");
 		predicateAnd();
 
-		System.out.println("Predicate And -------");
+		System.out.println("Predicate Or -------");
 		predicateOr();
 		
-		System.out.println("Predicate And -------");
+		System.out.println("Predicate Negate -------");
 		predicateNegate();
 	}
 }
