@@ -21,12 +21,16 @@ public class StreamsFlatMapExample {
     public static void main(String[] args) {
         System.out.println("printStudentActivites :: " + printStudentActivities());
 
+        System.out.println("printStudentActivites Distinct :: ");
         printStudentActivities().stream().distinct().forEach(System.out::println);
 
+        System.out.println("printStudentActivites Distinct count :: ");
         System.out.println(printStudentActivities().stream().distinct().count());
 
-        printStudentActivities().stream().sorted().forEach(System.out::println);
+        System.out.println("printStudentActivites Sorted :: ");
+        printStudentActivities().stream().distinct().sorted().forEach(System.out::println);
 
-        printStudentActivities().stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
+        System.out.println("printStudentActivites Reverse :: ");
+        printStudentActivities().stream().distinct().sorted(Comparator.reverseOrder()).forEach(System.out::println);
     }
 }
