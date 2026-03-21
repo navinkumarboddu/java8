@@ -3,11 +3,14 @@ package com.java8.practice.dsa.search.binary;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = {2,5,7,8,23,35,57,78,99,153};
+       // int[] arr = {2,5,7,8,23,35,57,78,99,153};
                    //0,1,2,3,4,  5, 6, 7, 8, 9
-        System.out.println(binarySearch(arr,35));
+       // System.out.println(binarySearch(arr,35));
 
-        System.out.println(implementBinarySearch(arr,35));
+       // System.out.println(implementBinarySearch(arr,35));
+
+        int[] nums = {1};
+        System.out.println(implementBinarySearch(nums,1));
     }
 
     private static int implementBinarySearch(int[] arr, int target) {
