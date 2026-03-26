@@ -8,6 +8,10 @@ public class BubbleSortWithWhileLoop {
         int[] array = {12, 35, 87, 26, 9, 28, 7};
         bubbleSort(array);
         System.out.println("Sorted array: "  + Arrays.toString(array));
+
+        int i = 5;
+        i = i++;
+        System.out.println(i);
     }
 
     private static void bubbleSort(int[] array) {
