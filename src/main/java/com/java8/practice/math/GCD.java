@@ -3,17 +3,17 @@ package com.java8.practice.math;
 public class GCD {
 
     public static void main(String[] args) {
-        int a = 12;
-        int b = 18;
-        System.out.println(findGCD(a,b));
-        System.out.println(findLCM(a,b));
+        int a = 13;
+        int b = 17;
+        System.out.println("GCD :::"+findGCD(a,b));
+        System.out.println("LCM ::: " + findLCM(a,b));
 
         printGCDnLCM(a,b);
     }
 
     private static void printGCDnLCM(int a, int b) {
         int lcm = 0;
-        for (int i = 1; i < a*b; i++) {
+        for (int i = 1; i <= a*b; i++) {
             if (i % a == 0 && i % b == 0) {
                 System.out.println("LCM ::: " + i);
                 lcm = i;
@@ -31,7 +31,7 @@ public class GCD {
     }
 
     private static int findLCM(int a, int b) {
-        for (int i = 1; i < a*b; i++) {
+        for (int i = 1; i <= a*b; i++) {
             if(i % a == 0 && i % b == 0){
                 return i;
             }
